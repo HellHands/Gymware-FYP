@@ -8,9 +8,11 @@ class VerifyLogin extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('LoginModel');
+		$this->load->model('FullInfoModel');
 	}
 
-	public function Index(){
+	public function Index()
+	{
 
 		$this->load->library('form_validation');
 	 
@@ -35,27 +37,33 @@ class VerifyLogin extends CI_Controller {
 		$email = $this->input->post('email');
 		
 		$result = $this->LoginModel->login($email, $password);
+		
 
 		if($result)
 		{
-			$sess_array = array();
 			
-			foreach($result as $row)
-			{
-		   		$sess_array = array(
-		     		'member_id' => $row->member_id,
-		     		'member_email' => $row->member_email
-		   		);
+			$fullinfo = $this->FullInfoModel->get_FullInfo($result['member_id']);
+			//$result['member_id'];
 
-		   		$this->session->set_userdata('logged_in', $sess_array);
-			}
+			$sess_array = array();
+	   		$sess_array = array(
+	     		'member_id' => $result['member_id'],
+	     		'member_email' => $result['member_email'],
+	     		'member_fname' => $fullinfo['member_fname'],
+	     		'member_lname' => $fullinfo['member_lname'],
+	     		'member_joindate' => $fullinfo['member_joindate'],
+	     		'member_package' => $fullinfo['member_package']
+	   		);
+
+	   		$this->session->set_userdata('logged_in', $sess_array);
+			
 			
 			return TRUE;
 		}
 		else
 		{
 			$this->form_validation->set_message('check_database', 'Invalid email or password');
-		 	return false;
+		 	return FALSE;
 		}
 	}
 }

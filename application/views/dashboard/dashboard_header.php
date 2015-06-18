@@ -4,7 +4,7 @@
 
 <head>
 
-<title>GymWare</title>
+<title><?php echo $name; ?> - Dashboard</title>
 
 <link href="<?php echo base_url('assets/css/bootstrap.css')?>" rel='stylesheet' type='text/css' />
 
@@ -52,19 +52,15 @@
 
       <ul class="nav" id="nav">
 
-        <li><a href="<?php echo base_url(); ?>">Home</a></li>
+        <li><a href="<?php echo base_url('dashboard'); ?>">Home</a></li>
 
-        <li><a href="<?php echo base_url('how-it-works'); ?>">How It Works</a></li>
+        <li><a href="<?php echo base_url('features'); ?>">Schedule</a></li>
 
-        <li><a href="<?php echo base_url('features'); ?>">Features</a></li>
+        <li><a href="<?php echo base_url('pricing'); ?>">Account Info</a></li>
 
-        <li><a href="<?php echo base_url('pricing'); ?>">Pricing</a></li>
+        <li><a href="<?php echo base_url('contact'); ?>">Profile</a></li>        
 
-        <li><a href="<?php echo base_url('contact'); ?>">Contact Us</a></li>
-
-        <li><a href="<?php echo base_url('register'); ?>">Register</a></li>
-
-        <li><a href="<?php echo base_url('login'); ?>">Login</a></li>
+        <li><a href="<?php echo base_url('dashboard/logout'); ?>">Logout</a></li>
 
         <div class="clear"></div>
 
