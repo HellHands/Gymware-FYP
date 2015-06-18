@@ -18,7 +18,9 @@ class Dashboard extends CI_Controller {
 			$data['email'] = $session_data['member_email'];
 			$data['id']    = $session_data['member_id'];
 			
+			$this->load->view('dashboard/dashboard_header', $data);
 			$this->load->view('dashboard/dashboard', $data);
+			$this->load->view('dashboard/dashboard_footer', $data);
 	   	}
 	   	else
 	   	{

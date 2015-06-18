@@ -10,18 +10,15 @@ class LoginModel extends CI_Model {
 	function login($email, $password)
  	{
  		$pass = md5($password);
-
-		$this -> db -> select('member_id, member_email, member_upass');
-		$this -> db -> from('members');
-		$this -> db -> where('member_email', $email);
-		$this -> db -> where('member_upass', $pass);
-		$this -> db -> limit(1);
-
-		$query = $this -> db -> get();
-
-		if($query -> num_rows() == 1)
+		
+		$query = $this->db->query("SELECT member_id, member_email, member_upass FROM members WHERE member_email = '{$email}' AND member_upass = '{$pass}'", 1);
+		
+		if($query->num_rows() == 1)
 		{
-			return $query->result();
+			$row = $query->row_array();
+			$id = $row['member_id'];
+			$query2 = $this->db->query("SELECT member_fname, member_lname, member_joindate, member_package from members_info WHERE member_id = '{$id}'");
+			//return $query->result();
 		}
 		else
 		{

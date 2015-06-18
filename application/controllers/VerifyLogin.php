@@ -18,9 +18,7 @@ class VerifyLogin extends CI_Controller {
 	   	$this->form_validation->set_rules('password', 'Password', 'trim|required|callback_check_database');
 	 
 	 	if($this->form_validation->run() == FALSE)
-	   	{
-			//Field validation failed.  User redirected to login page
-			
+	   	{			
 			$this->load->view('partials/header');
 			$this->load->view('login/login');
 			$this->load->view('login/loginfooter');
@@ -28,17 +26,14 @@ class VerifyLogin extends CI_Controller {
 	   	}
 	   	else
 	   	{
-		    //Go to private area
 		    redirect(base_url('dashboard'), 'refresh');
 	   	}
  	}
  
 	function check_database($password)
 	{
-		//Field validation succeeded.  Validate against database
 		$email = $this->input->post('email');
-
-		//query the database
+		
 		$result = $this->LoginModel->login($email, $password);
 
 		if($result)
@@ -53,8 +48,6 @@ class VerifyLogin extends CI_Controller {
 		   		);
 
 		   		$this->session->set_userdata('logged_in', $sess_array);
-		   		
-
 			}
 			
 			return TRUE;
