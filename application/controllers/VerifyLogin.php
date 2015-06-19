@@ -47,12 +47,12 @@ class VerifyLogin extends CI_Controller {
 
 			$sess_array = array();
 	   		$sess_array = array(
-	     		'member_id' => $result['member_id'],
-	     		'member_email' => $result['member_email'],
-	     		'member_fname' => $fullinfo['member_fname'],
-	     		'member_lname' => $fullinfo['member_lname'],
-	     		'member_joindate' => $fullinfo['member_joindate'],
-	     		'member_package' => $fullinfo['member_package']
+					'member_id'       => $result['member_id'],
+					'member_email'    => $result['member_email'],
+					'member_fname'    => $fullinfo['member_fname'],
+					'member_lname'    => $fullinfo['member_lname'],
+					'member_joindate' => $fullinfo['member_joindate'],
+					'member_package'  => $fullinfo['member_package']
 	   		);
 
 	   		$this->session->set_userdata('logged_in', $sess_array);
