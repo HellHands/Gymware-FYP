@@ -1,26 +1,15 @@
 <div class="main">
-	<div class="content_white">
-	  <h2>Welcome to GymWare</h2>
-	  <p>You'll love it as a gym owner.</p><h2>Welcome to GymWare</h2>
-	  <p>You'll love it as a gym owner.</p><h2>Welcome to GymWare</h2>
-	  <p>You'll love it as a gym owner.</p><h2>Welcome to GymWare</h2>
-	  <p>You'll love it as a gym owner.</p><h2>Welcome to GymWare</h2>
-	  <p>You'll love it as a gym owner.</p><h2>Welcome to GymWare</h2>
-	  <p>You'll love it as a gym owner.</p><h2>Welcome to GymWare</h2>
-	  <p>You'll love it as a gym owner.</p><h2>Welcome to GymWare</h2>
-	  <p>You'll love it as a gym owner.</p><h2>Welcome to GymWare</h2>
-	  <p>You'll love it as a gym owner.</p><h2>Welcome to GymWare</h2>
-	  <p>You'll love it as a gym owner.</p><h2>Welcome to GymWare</h2>
-	  <p>You'll love it as a gym owner.</p><h2>Welcome to GymWare</h2>
-	  <p>You'll love it as a gym owner.</p><h2>Welcome to GymWare</h2>
-	  <p>You'll love it as a gym owner.</p><h2>Welcome to GymWare</h2>
-	  <p>You'll love it as a gym owner.</p><h2>Welcome to GymWare</h2>
-	  <p>You'll love it as a gym owner.</p><h2>Welcome to GymWare</h2>
-	  <p>You'll love it as a gym owner.</p><h2>Welcome to GymWare</h2>
-	  <p>You'll love it as a gym owner.</p><h2>Welcome to GymWare</h2>
-	  
-	  <p>You'll love it as a gym owner.</p><h2>Welcome to GymWare</h2>
-	  <p>You'll love it as a gym owner.</p><h2>Welcome to GymWare</h2>
-	  <p>You'll love it as a gym owner.</p>
+	<div class="nav">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Account & Info. </a></li>
+			<li><a href="#">Schedule</a></li>
+			<li><a href="#">Profile</a></li>
+			<li><a href="dashboard/logout">Logout</a></li>
+		</ul>
+	</div>
+	<div class="clearfix"></div>
+	<div class="content">
+		<h1>Welcome to GymWare, <?php echo $name; ?></h1>	
 	</div>
 </div>
