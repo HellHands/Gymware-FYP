@@ -5,7 +5,7 @@
 			<li><a href="#">Account & Info. </a></li>
 			<li><a href="#">Schedule</a></li>
 			<li><a href="#">Profile</a></li>
-			<li><a href="dashboard/logout">Logout</a></li>
+			<li class="right"><a href="dashboard/logout">Logout</a></li>
 		</ul>
 	</div>
 	<div class="clearfix"></div>
